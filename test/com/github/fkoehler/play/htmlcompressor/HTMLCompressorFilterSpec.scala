@@ -11,9 +11,9 @@
 package com.github.fkoehler.play.htmlcompressor
 
 import akka.util.ByteString
-import com.github.fkoehler.play.htmlcompressor.fixtures.{CustomHTMLCompressorFilter, DefaultFilter, RequestHandler, WithGzipFilter}
+import com.github.fkoehler.play.htmlcompressor.fixtures.{ CustomHTMLCompressorFilter, DefaultFilter, RequestHandler, WithGzipFilter }
 import com.github.fkoehler.play.compressor.Helper
-import com.github.fkoehler.play.htmlcompressor.fixtures.{CustomHTMLCompressorFilter, DefaultFilter, RequestHandler, WithGzipFilter}
+import com.github.fkoehler.play.htmlcompressor.fixtures.{ CustomHTMLCompressorFilter, DefaultFilter, RequestHandler, WithGzipFilter }
 import org.apache.commons.io.IOUtils
 import org.specs2.mutable._
 import org.specs2.specification.Scope

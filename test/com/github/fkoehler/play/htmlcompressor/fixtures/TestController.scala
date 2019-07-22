@@ -1,18 +1,18 @@
 /**
-  * Play HTML Compressor
-  *
-  * LICENSE
-  *
-  * This source file is subject to the new BSD license that is bundled
-  * with this package in the file LICENSE.md.
-  * It is also available through the world-wide-web at this URL:
-  * https://github.com/fkoehler/play-html-compressor/blob/master/LICENSE.md
-  */
+ * Play HTML Compressor
+ *
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.md.
+ * It is also available through the world-wide-web at this URL:
+ * https://github.com/fkoehler/play-html-compressor/blob/master/LICENSE.md
+ */
 package com.github.fkoehler.play.htmlcompressor.fixtures
 
 import akka.stream.scaladsl.Source
 import akka.util.ByteString
-import controllers.{AssetsBuilder, AssetsMetadata}
+import controllers.{ AssetsBuilder, AssetsMetadata }
 import play.api.http.DefaultHttpErrorHandler
 import play.api.mvc._
 import play.twirl.api.Html
@@ -20,14 +20,14 @@ import play.twirl.api.Html
 import scala.concurrent.Future
 
 /**
-  * Test controller.
-  */
+ * Test controller.
+ */
 class TestController(components: ControllerComponents, meta: AssetsMetadata) extends AbstractController(components) {
 
   /**
-    * The template to compress.
-    */
-  val template = Html( """
+   * The template to compress.
+   */
+  val template = Html("""
 
     <!DOCTYPE html>
       <html>
@@ -42,43 +42,43 @@ class TestController(components: ControllerComponents, meta: AssetsMetadata) ext
   )
 
   /**
-    * A default action.
-    */
+   * A default action.
+   */
   def action = Action {
     Ok(template).as("text/html")
   }
 
   /**
-    * A async action.
-    */
+   * A async action.
+   */
   def asyncAction = Action.async {
     Future.successful(Ok(template).as("text/html"))
   }
 
   /**
-    * A non HTML action.
-    */
+   * A non HTML action.
+   */
   def nonHTML = Action {
     Ok("  <html/>")
   }
 
   /**
-    * Loads a static asset.
-    */
+   * Loads a static asset.
+   */
 
   val assets = new AssetsBuilder(DefaultHttpErrorHandler, meta)
   def staticAsset = assets.at("/", "static.html")
 
   /**
-    * Action with chunked transfer encoding.
-    */
+   * Action with chunked transfer encoding.
+   */
   def chunked = Action {
     val parts = List(" <html> ", " <body> ", " <h1> Title </h1>", " </body> ", " </html> ").map(html => ByteString(html))
     Ok.chunked(Source(parts)).as("text/html")
   }
 
   /**
-    * Action with gzipped asset.
-    */
+   * Action with gzipped asset.
+   */
   def gzipped = staticAsset
 }
