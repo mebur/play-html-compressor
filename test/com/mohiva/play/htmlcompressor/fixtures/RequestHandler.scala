@@ -6,7 +6,7 @@
  * This source file is subject to the new BSD license that is bundled
  * with this package in the file LICENSE.md.
  * It is also available through the world-wide-web at this URL:
- * https://github.com/mohiva/play-html-compressor/blob/master/LICENSE.md
+ * https://github.com/fkoehler/play-html-compressor/blob/master/LICENSE.md
  */
 package com.mohiva.play.htmlcompressor.fixtures
 

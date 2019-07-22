@@ -1,14 +1,14 @@
-This project is not maintained anymore. If someone is interessted to maintain a fork, please feel free to contact me so that I can add a link here.
+# Google's HTML (and XML) Compressor for Play Framework 2 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.fkoehler/play-html-compressor_2.13/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.fkoehler/play-html-compressor_2.13) [![Build Status](https://travis-ci.org/fkoehler/play-html-compressor.png)](https://travis-ci.org/fkoehler/play-html-compressor)
 
-# Google's HTML (and XML) Compressor for Play Framework 2 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.mohiva/play-html-compressor_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.mohiva/play-html-compressor_2.11) [![Build Status](https://travis-ci.org/mohiva/play-html-compressor.png)](https://travis-ci.org/mohiva/play-html-compressor)
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mohiva/play-html-compressor?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+This project is a fork of http://github.com/mohiva/play-html-compressor. I kept the package name `com.mohiva.play` to allow
+easy upgrades of existing code bases.
 
 ## Installation
 
 In your project/Build.scala:
 ```scala
 libraryDependencies ++= Seq(
-  "com.mohiva" %% "play-html-compressor" % "0.8.0"
+  "com.github.fkoehler" %% "play-html-compressor" % "0.8.0"
 )
 ```
 
@@ -195,8 +195,8 @@ public class CustomHTMLCompressorFilter extends HTMLCompressorFilter {
 
 To provide your bindings for your user defined filter you must either create a new module
 or you can add the binding to your default DI module. This process is detailed documented
-for [Scala](https://www.playframework.com/documentation/2.6.x/ScalaDependencyInjection) and
-[Java](https://www.playframework.com/documentation/2.6.x/JavaDependencyInjection) users. So
+for [Scala](https://www.playframework.com/documentation/2.7.x/ScalaDependencyInjection) and
+[Java](https://www.playframework.com/documentation/2.7.x/JavaDependencyInjection) users. So
 please refer to this documentation.
 
 ##### Disable default modules
@@ -218,7 +218,7 @@ play.filters {
 
   # Mohiva Compressor
   # ~~~~~
-  # https://github.com/mohiva/play-html-compressor
+  # https://github.com/fkoehler/play-html-compressor
   compressor {
     html {
       preserveLineBreaks = false

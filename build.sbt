@@ -28,19 +28,24 @@ lazy val root = (project in file(".")).enablePlugins(play.sbt.PlayWeb)
 
 sonatypeSettings
 
-organization := "com.mohiva"
+organization := "com.github.fkoehler"
 
 description := "Google's HTML Compressor for Play Framework 2"
 
-homepage := Some(url("https://github.com/mohiva/play-html-compressor/"))
+homepage := Some(url("https://github.com/fkoehler/play-html-compressor/"))
 
-licenses := Seq("BSD New" -> url("https://github.com/mohiva/play-html-compressor/blob/master/LICENSE.md"))
+licenses := Seq("BSD New" -> url("https://github.com/fkoehler/play-html-compressor/blob/master/LICENSE.md"))
 
 val pom = <scm>
-  <url>git@github.com:mohiva/play-html-compressor.git</url>
-  <connection>scm:git:git@github.com:mohiva/play-html-compressor.git</connection>
+  <url>git@github.com:fkoehler/play-html-compressor.git</url>
+  <connection>scm:git:git@github.com:fkoehler/play-html-compressor.git</connection>
 </scm>
   <developers>
+    <developer>
+      <id>fkoehler</id>
+      <name>Fabian Köhler</name>
+      <url>http://fabiankoehler.de</url>
+    </developer>
     <developer>
       <id>akkie</id>
       <name>Christian Kaps</name>
