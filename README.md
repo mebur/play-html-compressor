@@ -1,20 +1,19 @@
 # Google's HTML (and XML) Compressor for Play Framework 2 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.fkoehler/play-html-compressor_2.13/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.fkoehler/play-html-compressor_2.13) [![Build Status](https://travis-ci.org/fkoehler/play-html-compressor.png)](https://travis-ci.org/fkoehler/play-html-compressor)
 
-This project is a fork of http://github.com/mohiva/play-html-compressor. I kept the package name `com.mohiva.play` to allow
-easy upgrades of existing code bases.
+This project is a fork of http://github.com/mohiva/play-html-compressor.
 
 ## Installation
 
 In your project/Build.scala:
 ```scala
 libraryDependencies ++= Seq(
-  "com.github.fkoehler" %% "play-html-compressor" % "0.8.0"
+  "com.github.fkoehler" %% "play-html-compressor" % "1.0.0"
 )
 ```
 
 ### History
 
-* For Play Framework 2.7 use version 0.8.0
+* For Play Framework 2.7 use version 1.0.0
 * For Play Framework 2.6 use version 0.7.1
 * For Play Framework 2.5 use version 0.6.3
 * For Play Framework 2.4 use version 0.5.0
@@ -39,8 +38,8 @@ Documentation ([Scala](https://www.playframework.com/documentation/2.7.x/ScalaHt
 ```scala
 import javax.inject.Inject
 
-import com.mohiva.play.htmlcompressor.HTMLCompressorFilter
-import com.mohiva.play.xmlcompressor.XMLCompressorFilter
+import com.github.fkoehler.play.htmlcompressor.HTMLCompressorFilter
+import com.github.fkoehler.play.xmlcompressor.XMLCompressorFilter
 import play.api.http.HttpFilters
 import play.api.mvc.EssentialFilter
 
@@ -59,8 +58,8 @@ class Filters @Inject() (
 #### For Java users
 
 ```java
-import com.mohiva.play.htmlcompressor.HTMLCompressorFilter;
-import com.mohiva.play.xmlcompressor.XMLCompressorFilter;
+import com.github.fkoehler.play.htmlcompressor.HTMLCompressorFilter;
+import com.github.fkoehler.play.xmlcompressor.XMLCompressorFilter;
 import play.mvc.EssentialFilter;
 import play.http.HttpFilters;
 
@@ -112,7 +111,7 @@ import javax.inject.Inject
 
 import akka.stream.Materializer
 import com.googlecode.htmlcompressor.compressor.HtmlCompressor
-import com.mohiva.play.htmlcompressor.HTMLCompressorFilter
+import com.github.fkoehler.play.htmlcompressor.HTMLCompressorFilter
 import play.api.{Configuration, Environment, Mode}
 
 class CustomHTMLCompressorFilter @Inject() (
@@ -140,7 +139,7 @@ class CustomHTMLCompressorFilter @Inject() (
 ```java
 import akka.stream.Materializer;
 import com.googlecode.htmlcompressor.compressor.HtmlCompressor;
-import com.mohiva.play.htmlcompressor.HTMLCompressorFilter;
+import com.github.fkoehler.play.htmlcompressor.HTMLCompressorFilter;
 import play.Environment;
 import play.Mode;
 import play.api.Configuration;
@@ -204,8 +203,8 @@ please refer to this documentation.
 To disable the default modules you must append the modules to the `play.modules.disabled` property in `application.conf`:
 
 ```scala
-play.modules.disabled += "com.mohiva.play.htmlcompressor.HTMLCompressorFilterModule"
-play.modules.disabled += "com.mohiva.play.xmlcompressor.XMLCompressorFilterModule"
+play.modules.disabled += "com.github.fkoehler.play.htmlcompressor.HTMLCompressorFilterModule"
+play.modules.disabled += "com.github.fkoehler.play.xmlcompressor.XMLCompressorFilterModule"
 ```
 
 ### Customize filter behaviour
@@ -216,7 +215,7 @@ that, you could adding the following keys on your `application.conf` file :
 ```scala
 play.filters {
 
-  # Mohiva Compressor
+  # Play Html Compressor
   # ~~~~~
   # https://github.com/fkoehler/play-html-compressor
   compressor {

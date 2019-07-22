@@ -9,7 +9,7 @@ import xerial.sbt.Sonatype._
 
 name := "play-html-compressor"
 
-version := "0.8.0"
+version := "1.0.0"
 
 libraryDependencies ++= Seq(
   "com.googlecode.htmlcompressor" % "htmlcompressor" % "1.5.2",
@@ -47,7 +47,7 @@ scmInfo := Some(
 
 developers := List(
   Developer(id="akkie", name="Christian Kaps", email="info@mohiva.com", url=url("http://mohiva.com")),
-  Developer(id="fkoehler", name="Fabian Köhler", email="fab@fabiankoehler.de", url=url("http://mohiva.com"))
+  Developer(id="fkoehler", name="Fabian Köhler", email="fab@fabiankoehler.de", url=url("http://fabiankoehler.de"))
 )
 publishMavenStyle := true
 
