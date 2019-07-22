@@ -36,30 +36,26 @@ homepage := Some(url("https://github.com/fkoehler/play-html-compressor/"))
 
 licenses := Seq("BSD New" -> url("https://github.com/fkoehler/play-html-compressor/blob/master/LICENSE.md"))
 
-val pom = <scm>
-  <url>git@github.com:fkoehler/play-html-compressor.git</url>
-  <connection>scm:git:git@github.com:fkoehler/play-html-compressor.git</connection>
-</scm>
-  <developers>
-    <developer>
-      <id>fkoehler</id>
-      <name>Fabian Köhler</name>
-      <url>http://fabiankoehler.de</url>
-    </developer>
-    <developer>
-      <id>akkie</id>
-      <name>Christian Kaps</name>
-      <url>http://mohiva.com</url>
-    </developer>
-  </developers>
+homepage := Some(url("https://github.com/fkoehler/play-html-compressor"))
 
+scmInfo := Some(
+  ScmInfo(
+    url("https://github.com/fkoehler/play-html-compressor"),
+    "scm:git@github.com:fkoehler/play-html-compressor.git"
+  )
+)
+
+developers := List(
+  Developer(id="akkie", name="Christian Kaps", email="info@mohiva.com", url=url("http://mohiva.com")),
+  Developer(id="fkoehler", name="Fabian Köhler", email="fab@fabiankoehler.de", url=url("http://mohiva.com"))
+)
 publishMavenStyle := true
 
 publishArtifact in Test := false
 
 pomIncludeRepository := { _ => false }
 
-pomExtra := pom
+useGpg := true
 
 //*******************************
 // Compiler settings
