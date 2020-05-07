@@ -36,8 +36,6 @@ homepage := Some(url("https://github.com/fkoehler/play-html-compressor/"))
 
 licenses := Seq("BSD New" -> url("https://github.com/fkoehler/play-html-compressor/blob/master/LICENSE.md"))
 
-homepage := Some(url("https://github.com/fkoehler/play-html-compressor"))
-
 scmInfo := Some(
   ScmInfo(
     url("https://github.com/fkoehler/play-html-compressor"),
@@ -54,6 +52,8 @@ publishMavenStyle := true
 publishArtifact in Test := false
 
 pomIncludeRepository := { _ => false }
+
+publishTo := sonatypePublishToBundle.value
 
 //*******************************
 // Compiler settings

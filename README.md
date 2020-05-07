@@ -239,4 +239,10 @@ play.filters {
 
 ### Release a new version
 
-To release a new version use `sbt +publish` 
+Follow the steps listed here: https://github.com/xerial/sbt-sonatype#publishing-your-artifact but basically it is
+
+```
+; + publishSigned; sonatypeBundleRelease
+```
+
+First the proper gnup keys need to be set locally
