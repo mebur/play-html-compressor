@@ -107,3 +107,5 @@ ScalariformKeys.preferences := ScalariformKeys.preferences.value
   .setPreference(DanglingCloseParenthesis, Preserve)
 
 Global / onChangedBuildSource := ReloadOnSourceChanges
+
+usePgpKeyHex("637ACEDAD702AB5C210E9671BB3E67AE0DBF3F60")
