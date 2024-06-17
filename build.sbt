@@ -1,6 +1,8 @@
-import com.typesafe.sbt.SbtScalariform.ScalariformKeys
+//import com.typesafe.sbt.SbtScalariform.ScalariformKeys
 import play.sbt.PlayImport._
-import scalariform.formatter.preferences._
+
+import scala.collection.Seq
+//import scalariform.formatter.preferences._
 import xerial.sbt.Sonatype._
 
 //*******************************
@@ -9,7 +11,7 @@ import xerial.sbt.Sonatype._
 
 name := "play-html-compressor"
 
-version := "2.8.0"
+version := "2.9.0-SNAPSHOT"
 
 libraryDependencies ++= Seq(
   "com.googlecode.htmlcompressor" % "htmlcompressor" % "1.5.2",
@@ -49,7 +51,7 @@ developers := List(
 )
 publishMavenStyle := true
 
-publishArtifact in Test := false
+Test / publishArtifact := false
 
 pomIncludeRepository := { _ => false }
 
@@ -59,9 +61,9 @@ publishTo := sonatypePublishToBundle.value
 // Compiler settings
 //*******************************
 
-scalaVersion := "2.13.2"
+crossScalaVersions := Seq("2.13.14", "3.3.3")
 
-crossScalaVersions := Seq("2.13.2", "2.12.8")
+scalaVersion := crossScalaVersions.value.head
 
 scalacOptions ++= PartialFunction.condOpt(CrossVersion.partialVersion(scalaVersion.value)) {
   case Some((2, v)) if v >= 11 && v <= 12 => Seq(
@@ -98,13 +100,14 @@ javacOptions ++= Seq(
 //*******************************
 // Scalariform settings
 //*******************************
-
+/*
 scalariformAutoformat := true
 
 ScalariformKeys.preferences := ScalariformKeys.preferences.value
   .setPreference(FormatXml, false)
   .setPreference(DoubleIndentConstructorArguments, false)
   .setPreference(DanglingCloseParenthesis, Preserve)
+*/
 
 Global / onChangedBuildSource := ReloadOnSourceChanges
 

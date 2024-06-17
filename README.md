@@ -7,12 +7,13 @@ This project is a fork of http://github.com/mohiva/play-html-compressor.
 In your project/Build.scala:
 ```scala
 libraryDependencies ++= Seq(
-  "com.github.fkoehler" %% "play-html-compressor" % "2.8.0"
+  "com.github.fkoehler" %% "play-html-compressor" % "2.9.0"
 )
 ```
 
 ### History
 
+* For Play Framework 2.9 use version 2.9.0
 * For Play Framework 2.8 use version 2.8.0
 * For Play Framework 2.7 use version 1.0.0
 * For Play Framework 2.6 use version 0.7.1
